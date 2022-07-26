@@ -19,10 +19,10 @@ pipeline {
     success {
       sh 'rm drift-report.txt'
       sh 'echo "No config drigt" > no-drift.txt'
-      archiveArtifacts artifaces: '*.txt'
+      archiveArtifacts artifacts: '*.txt'
     }
     failure {
-      archiveArtifacts artifaces: '*.txt'
+      archiveArtifacts artifacts: '*.txt'
       build job: 'apply/master'
     }
   }
